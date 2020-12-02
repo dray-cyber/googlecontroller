@@ -13,8 +13,8 @@ None for now
 ## How to use
 
 ``` python
-from googlehomepush import GoogleAssistant
-from googlehomepush.http_server import serve_file # for local files
+from googlecontroller import GoogleAssistant
+from googlecontroller.http_server import serve_file # for local files
 host = "ip"
 home = GoogleAssistant(host=host)
 home.say("test")
