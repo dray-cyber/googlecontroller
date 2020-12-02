@@ -6,9 +6,16 @@ from pathlib import Path
 from threading import Thread, Timer
 import socket
 import os
+
 def serve_file(filename, content_type=None):
+    """
+        Create an http server on a random port to serve a file. 
+        The file can be downloaded only one time. After 1 minutes the server is stoped
+        filename: string The file path or file content
+        content_type: the file content-type
+    """
     class FileHandler(BaseHTTPRequestHandler):
-        def do_GET(self):  
+        def do_GET(self):  # noqa
             try:
                 self.send_response(200)
                 self.send_header("Content-type", content_type)
@@ -26,16 +33,19 @@ def serve_file(filename, content_type=None):
                             self.wfile.write(data)
                 else:
                     self.wfile.write(filename)
-            except:  
+            except:  # noqa
                 traceback.print_exc()
 
             #tthToStopServer.cancel()
             #stopServer(httpd)
+
     def startServer(httpd):
         httpd.serve_forever()
         httpd.server_close()
+
     def stopServer(httpd):
         Thread(target = httpd.shutdown).start()
+
     if content_type is None:
         content_type = "video/mp4"
     httpd = socketserver.TCPServer(("0.0.0.0", 0), FileHandler)
