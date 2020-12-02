@@ -27,18 +27,20 @@ home.volume(100)
 home.volume(0)
 
 ```
-### .say(text, speed, lang)
+### .say(text, speed,ignore, lang)
 
 Push a message on Google home
 
 - `text` is the test message to say
 - `speed` is the rate of speed of the message ranges from 0.000+ as slowest to 1 as normal speed.
+- `ignore` ignore if audio is playing and play it regardless if ignore=True and only play if not playing if ignore=False or is not specified. 
 - `lang` the text language, default value is 'en' to change it have lang = 'language' as described in google translate en-Us, es (spanish), ect
 
-### .play(url, contentType = 'audio/mp3'):
+### .play(url, ignore, contentType = 'audio/mp3'):
 
 Push a sound to Google home
 - `url` an audio file URL
+- `ignore` ignore if audio is playing and play it regardless if ignore=True and only play if not playing if ignore=False or is not specified. 
 - `contentType` the audio file content type
 
 ### .volume(volumelevel):
