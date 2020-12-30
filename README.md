@@ -4,8 +4,8 @@ Library for Python 3.8+ to push text message or audio file with the Google Home.
 
 ## Installation
 
-    
-pip install https://github.com/dray-cyber/googlecontroller
+finally a pypi!!!!!!!
+pip install googlecontroller
 
 ## Depending On
 
