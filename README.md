@@ -5,8 +5,9 @@ Library for Python 3.8+ to push text message or audio file with the Google Home.
 ## Installation
 
 finally a pypi!!!!!!!
+```
 pip install googlecontroller
-
+```
 ## Depending On
 
 PyChromeCast
@@ -40,11 +41,11 @@ Push a message on Google home
 
 Push a sound to Google home
 - `url` an audio file URL
-- `ignore` ignore if audio is playing and play it regardless if ignore=True and only play if not playing if ignore=False or is not specified. 
+- `ignore` ignore if audio is playing and play it regardless if ignore=True and only play if not playing.If ignore is not specified it will be set to False. 
 - `contentType` the audio file content type
 
 ### .volume(volumelevel):
-- `volumelevel` the volume level from 0-100 by 0.01 to 1 Example: home.volume(volumelevel=0.05 or 5 percent volume. If you want to take it as user input you can do volumelevel=float(input()) the float is required to convert it as it is a decimal.
+- `volumelevel` the volume level from 0-100 Example: home.volume(5) or home.volume(volumelevel=5). If you want to take it as user input you can do volumelevel=input().
 
 
 

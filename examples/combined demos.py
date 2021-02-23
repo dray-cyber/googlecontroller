@@ -2,8 +2,8 @@ from googlecontroller import GoogleAssistant
 
 host = "192.168.0.4" #again your google homes ip
 home = GoogleAssistant(host=host)
-print("Type Your Volume 0.01 to 0.99/1")
-home.volume(volumelevel=float(input()))
+print("Type Your Volume 0-100")
+home.volume(volumelevel=input())
 print("Type speed of tts")
 speed = str(input())
 print("Type for TTS")
