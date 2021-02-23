@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: googlecontroller
-Version: 3.0.0
+Version: 3.0.5
 Summary: control your google home
 Home-page: https://github.com/dray-cyber/googlecontroller
 Author: dray-cyber
@@ -12,8 +12,8 @@ Description: # googlecontroller
         
         ## Installation
         
-            
-        pip install https://github.com/dray-cyber/googlecontroller
+        finally a pypi!!!!!!!
+        pip install googlecontroller
         
         ## Depending On
         
@@ -62,5 +62,5 @@ Description: # googlecontroller
 Platform: UNKNOWN
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Programming Language :: Python :: 3
-Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
 Description-Content-Type: text/markdown

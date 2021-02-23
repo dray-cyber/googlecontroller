@@ -21,4 +21,5 @@ class GoogleAssistant:
         url = u"https://translate.google.com/translate_tts?ie=UTF-8&q=" + text + "%21&tl=" + lang + "&ttsspeed=" + speed + "&total=1&idx=0&client=tw-ob&textlen=14&tk=594228.1040269"
         self.play(url, ignore)
     def volume(self, volumelevel):
+        volumelevel = volumelevel // 100
         self.cc.set_volume(volumelevel)
