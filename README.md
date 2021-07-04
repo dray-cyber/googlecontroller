@@ -2,6 +2,8 @@
 
 Library for Python 3.8+ to push text message or audio file with the Google Home.Originally made by - Thomas Deblock (@tdeblock) I have expanded most of the code quite a bit little of the original remains, but the idea came from Mr.Deblock.This is a sorta v2 for the googlehomepush module they made.
 
+###This is now officially broken and will no longer be updated.If you are better at python then I take a shot at this problem.Fork this repo, do what you must.
+
 ## Installation
 
 finally a pypi!!!!!!!
