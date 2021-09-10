@@ -22,6 +22,7 @@ class GoogleAssistant:
             media = self.cc.media_controller
             media.play_media(url, contenttype)
             media.block_until_active()
+    #home.serve_media("murp.mp3", "C:\Users\YourUser\Desktop\") Only folder of file location not file itself
     def serve_media(self, media, folder, ignore = False):
         try:
             os.chdir(folder)
