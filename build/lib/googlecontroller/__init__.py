@@ -4,7 +4,7 @@ import os
 hostname = socket.gethostname()
 YourPrivateIpAddress = socket.gethostbyname(hostname)
 print("Well Hello!")
-print(local_ip)
+print(YourPrivateIpAddress)
 name = "googlecontroller"
 __all__ = 'GoogleAssistant'
 class GoogleAssistant:
