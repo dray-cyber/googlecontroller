@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: googlecontroller
-Version: 5
+Version: 5.1
 Summary: control your google home
 Home-page: https://github.com/dray-cyber/googlecontroller
 Author: dray-cyber
@@ -9,7 +9,7 @@ License: MIT
 Platform: UNKNOWN
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Programming Language :: Python :: 3
-Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
 Description-Content-Type: text/markdown
 License-File: LICENSE
 

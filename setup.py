@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="googlecontroller",
-    version="5",
+    version="5.1",
     description="control your google home",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -21,11 +21,11 @@ setup(
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
     ],
     packages=["googlecontroller"],
     include_package_data=True,
-    install_requires=["requests", "pychromecast"],
+    install_requires=["requests", "pychromecast", "pyngrok"],
     entry_points={
         "console_scripts": [
             "googlecontroller=googlecontroller.__init__:main",
