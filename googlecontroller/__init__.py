@@ -28,6 +28,7 @@ class GoogleAssistant:
             media.play_media(url, contenttype)
             media.block_until_active()
     def serve_media(self, media, folder, opentunnel = 1):
+        global http_tunnel
         if opentunnel == 0:
             serverhttp = threading.Thread(target=httpserver, args=(folder,))
             serverhttp.start()

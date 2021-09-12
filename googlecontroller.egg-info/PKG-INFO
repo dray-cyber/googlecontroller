@@ -14,7 +14,7 @@ Description-Content-Type: text/markdown
 License-File: LICENSE
 
 # googlecontroller
-
+GITHUB EXCLUSIVE KNOWLEDGE FOR SERVE_MEDIA HERE
 Library for Python 3.9+ to push text message or audio file with the Google Home.Originally made by - Thomas Deblock (@tdeblock) I have expanded most of the code quite a bit little of the original remains, but the idea came from Mr.Deblock.This is a sorta v2 for the googlehomepush module they made.
 
 ## Installation
@@ -40,6 +40,10 @@ home.say("test")
 home.play("http://www.hubharp.com/web_sound/BachGavotteShort.mp3")
 
 #When serving media NEVER USE A \ ONLY USE /
+#when doing your first home.serve_media you have to include a 3rd variable, opentunnle!For that 1 first time you have to set it manually to a 0!
+#opentunnel = 0
+#like this home.serve_media("YourMedia.mp3", "C:/Users/YOU!/Music/", opentunnel)
+#**then never use that variable again**
 home.serve_media("YourMedia.mp3", "C:/Users/YOU!/Music/") # 1st is the name of the media, second is the full path to media location!
 home.volume(100)
 home.volume(0)
