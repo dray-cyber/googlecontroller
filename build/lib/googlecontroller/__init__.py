@@ -44,6 +44,7 @@ class GoogleAssistant:
         ngrokurl = ngrokurlpartone + "/" + str(media)
         print(ngrokurl)
         self.play(ngrokurl)
+        time.sleep(1)
     def say(self, text, speed = 1, ignore = False, lang = 'en-US'):
         speed = str(speed)
         #url = u"https://translate.google.com/translate_tts?ie=UTF-8&q=" + text + "%21&tl=" + lang + "&ttsspeed=" + speed + "&total=1&idx=0&client=tw-ob&textlen=14&tk=594228.1040269"

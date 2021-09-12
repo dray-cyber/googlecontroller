@@ -27,6 +27,7 @@ home.play("http://www.hubharp.com/web_sound/BachGavotteShort.mp3")
 #When serving media NEVER USE A \ ONLY USE /
 #when doing your first home.serve_media you have to include a 3rd variable, opentunnle!For that 1 first time you have to set it manually to a 0!
 #opentunnel = 0
+#YOU MUST USE A DELAY IF DOING MULTIPLE IN A ROW FINE TUNE AS YOU SEE FIT
 #like this home.serve_media("YourMedia.mp3", "C:/Users/YOU!/Music/", opentunnel)
 #**then never use that variable again**
 home.serve_media("YourMedia.mp3", "C:/Users/YOU!/Music/") # 1st is the name of the media, second is the full path to media location!
