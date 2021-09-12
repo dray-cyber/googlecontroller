@@ -1,12 +1,17 @@
+from pyngrok import ngrok
 import pychromecast
+import threading
 import socket
+import time
 import os
 hostname = socket.gethostname()
 YourPrivateIpAddress = socket.gethostbyname(hostname)
-print("Well Hello!")
 print(YourPrivateIpAddress)
 name = "googlecontroller"
 __all__ = 'GoogleAssistant'
+def httpserver(path):
+    os.chdir(path)
+    os.system('cmd /k "python -m http.server 80 --bind 127.0.0.1"')
 class GoogleAssistant:
     def __init__(self, host = None):
         try:
@@ -22,20 +27,24 @@ class GoogleAssistant:
             media = self.cc.media_controller
             media.play_media(url, contenttype)
             media.block_until_active()
-    #home.serve_media("murp.mp3", "C:\Users\YourUser\Desktop\") Only folder of file location not file itself
-    def serve_media(self, media, folder, ignore = False):
-        try:
-            os.chdir(folder)
-            os.system('cmd /k "python -m SimpleHTTPServer"')
-        except Exception as e:
-            print(e)
-        mc = self.cc.media_controller
-        mc.play_media("http://" + str(YourPrivateIpAddress) + ":8000/" + str("media"), content_type="audio/mp3")
-        mc.block_until_active()
-        mc.play()
+    def serve_media(self, media, folder, opentunnel = 1):
+        if opentunnel == 0:
+            serverhttp = threading.Thread(target=httpserver, args=(folder,))
+            serverhttp.start()
+            http_tunnel = ngrok.connect(bind_tls=True)
+            time.sleep(3)
+            print("You are all set now!")
+        url = "http://" + YourPrivateIpAddress + ":8000/" + str(media)
+        http_tunnels = str(http_tunnel)
+        spliced = http_tunnels.split('"')[1]
+        ngrokurlpartone = spliced.split('"')[0]
+        ngrokurl = ngrokurlpartone + "/" + str(media)
+        print(ngrokurl)
+        self.play(ngrokurl)
     def say(self, text, speed = 1, ignore = False, lang = 'en-US'):
         speed = str(speed)
-        url = u"https://translate.google.com/translate_tts?ie=UTF-8&q=" + text + "%21&tl=" + lang + "&ttsspeed=" + speed + "&total=1&idx=0&client=tw-ob&textlen=14&tk=594228.1040269"
+        #url = u"https://translate.google.com/translate_tts?ie=UTF-8&q=" + text + "%21&tl=" + lang + "&ttsspeed=" + speed + "&total=1&idx=0&client=tw-ob&textlen=14&tk=594228.1040269"
+        url = u"http://192.168.56.1:8000/beep.mp3"
         self.play(url, ignore)
     def volume(self, volumelevel):
         volumelevel = volumelevel // 100
