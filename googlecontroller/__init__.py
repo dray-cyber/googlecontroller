@@ -4,6 +4,8 @@ import threading
 import socket
 import time
 import os
+global http_tunnel
+http_tunnel = None
 hostname = socket.gethostname()
 YourPrivateIpAddress = socket.gethostbyname(hostname)
 print(YourPrivateIpAddress)
