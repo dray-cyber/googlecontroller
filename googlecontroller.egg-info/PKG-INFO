@@ -1,69 +1,72 @@
 Metadata-Version: 2.1
 Name: googlecontroller
-Version: 3.6
+Version: 5
 Summary: control your google home
 Home-page: https://github.com/dray-cyber/googlecontroller
 Author: dray-cyber
 Author-email: testerforpyt123@gmail.com
 License: MIT
-Description: # googlecontroller
-        
-        Library for Python 3.8+ to push text message or audio file with the Google Home.Originally made by - Thomas Deblock (@tdeblock) I have expanded most of the code quite a bit little of the original remains, but the idea came from Mr.Deblock.This is a sorta v2 for the googlehomepush module they made.
-        
-        ## This is now officially broken and will no longer be updated.If you are better at python then I take a shot at this problem.Fork this repo, do what you must.
-        
-        ## Installation
-        
-        finally a pypi!!!!!!!
-        ```
-        pip install googlecontroller
-        ```
-        ## Depending On
-        
-        PyChromeCast
-        
-        ## How to use
-        
-        ``` python
-        from googlecontroller import GoogleAssistant
-        from googlecontroller.http_server import serve_file # for local files
-        host = "ip"
-        home = GoogleAssistant(host=host)
-        home.say("test")
-        home.play("http://www.hubharp.com/web_sound/BachGavotteShort.mp3")
-        
-        file_url = serve_file("/path/to/file", "audio/mp3") # local
-        home.play(file_url, "audio/mp3")
-        home.volume(100)
-        home.volume(0)
-        
-        ```
-        ### .say(text, speed,ignore, lang)
-        
-        Push a message on Google home
-        
-        - `text` is the test message to say
-        - `speed` is the rate of speed of the message ranges from 0.000+ as slowest to 1 as normal speed.
-        - `ignore` ignore if audio is playing and play it regardless if ignore=True and only play if not playing if ignore=False or is not specified. 
-        - `lang` the text language, default value is 'en' to change it have lang = 'language' as described in google translate en-Us, es (spanish), ect
-        
-        ### .play(url, ignore, contentType = 'audio/mp3'):
-        
-        Push a sound to Google home
-        - `url` an audio file URL
-        - `ignore` ignore if audio is playing and play it regardless if ignore=True and only play if not playing.If ignore is not specified it will be set to False. 
-        - `contentType` the audio file content type
-        
-        ### .volume(volumelevel):
-        - `volumelevel` the volume level from 0-100 Example: home.volume(5) or home.volume(volumelevel=5). If you want to take it as user input you can do home.volume(volumelevel=input()).
-        
-        
-        
-        ## Maintainers
-        - Dray-Cyber
-        
 Platform: UNKNOWN
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Programming Language :: Python :: 3
 Classifier: Programming Language :: Python :: 3.8
 Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# googlecontroller
+
+Library for Python 3.9+ to push text message or audio file with the Google Home.Originally made by - Thomas Deblock (@tdeblock) I have expanded most of the code quite a bit little of the original remains, but the idea came from Mr.Deblock.This is a sorta v2 for the googlehomepush module they made.
+
+## Installation
+
+finally a pypi!!!!!!!
+```
+pip install googlecontroller
+```
+## Depending On
+
+PyChromeCast
+Pyngrok
+
+
+## How to use
+
+``` python
+from googlecontroller import GoogleAssistant
+from googlecontroller.http_server import serve_file # for local files
+host = "ip"
+home = GoogleAssistant(host=host)
+home.say("test")
+home.play("http://www.hubharp.com/web_sound/BachGavotteShort.mp3")
+
+#When serving media NEVER USE A \ ONLY USE /
+home.serve_media("YourMedia.mp3", "C:/Users/YOU!/Music/") # 1st is the name of the media, second is the full path to media location!
+home.volume(100)
+home.volume(0)
+
+```
+### .say(text, speed,ignore, lang)
+
+Push a message on Google home
+
+- `text` is the test message to say
+- `speed` is the rate of speed of the message ranges from 0.000+ as slowest to 1 as normal speed.
+- `ignore` ignore if audio is playing and play it regardless if ignore=True and only play if not playing if ignore=False or is not specified. 
+- `lang` the text language, default value is 'en' to change it have lang = 'language' as described in google translate en-Us, es (spanish), ect
+
+### .play(url, ignore, contentType = 'audio/mp3'):
+
+Push a sound to Google home
+- `url` an audio file URL
+- `ignore` ignore if audio is playing and play it regardless if ignore=True and only play if not playing.If ignore is not specified it will be set to False. 
+- `contentType` the audio file content type
+
+### .volume(volumelevel):
+- `volumelevel` the volume level from 0-100 Example: home.volume(5) or home.volume(volumelevel=5). If you want to take it as user input you can do home.volume(volumelevel=input()).
+
+
+
+## Maintainers
+- Dray-Cyber
+
+
