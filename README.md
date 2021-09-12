@@ -24,7 +24,8 @@ home = GoogleAssistant(host=host)
 home.say("test")
 home.play("http://www.hubharp.com/web_sound/BachGavotteShort.mp3")
 
-home.serve_media("YourMedia.mp3", "C:\Users\YOU!\Music\") # 1st is the name of the media, second is the full path to media location!
+#When serving media NEVER USE A \ ONLY USE /
+home.serve_media("YourMedia.mp3", "C:/Users/YOU!/Music/") # 1st is the name of the media, second is the full path to media location!
 home.volume(100)
 home.volume(0)
 
