@@ -47,8 +47,7 @@ class GoogleAssistant:
         time.sleep(1)
     def say(self, text, speed = 1, ignore = False, lang = 'en-US'):
         speed = str(speed)
-        #url = u"https://translate.google.com/translate_tts?ie=UTF-8&q=" + text + "%21&tl=" + lang + "&ttsspeed=" + speed + "&total=1&idx=0&client=tw-ob&textlen=14&tk=594228.1040269"
-        url = u"http://192.168.56.1:8000/beep.mp3"
+        url = u"https://translate.google.com/translate_tts?ie=UTF-8&q=" + text + "%21&tl=" + lang + "&ttsspeed=" + speed + "&total=1&idx=0&client=tw-ob&textlen=14&tk=594228.1040269"
         self.play(url, ignore)
     def volume(self, volumelevel):
         volumelevel = volumelevel // 100
