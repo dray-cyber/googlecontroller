@@ -13,7 +13,10 @@ name = "googlecontroller"
 __all__ = 'GoogleAssistant'
 def httpserver(path):
     os.chdir(path)
-    os.system('cmd /k "python -m http.server 80 --bind 127.0.0.1"')
+    if os.name == 'nt':
+        os.system('cmd /k "python -m http.server 80 --bind 127.0.0.1"')
+    else:
+        os.system('cmd /k "python -m SimpleHTTPServer 80 --bind 127.0.0.1"')
 class GoogleAssistant:
     def __init__(self, host = None):
         try:
