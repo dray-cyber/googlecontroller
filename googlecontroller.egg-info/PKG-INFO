@@ -1,3 +1,18 @@
+Metadata-Version: 2.1
+Name: googlecontroller
+Version: 5.8
+Summary: control your google home
+Home-page: https://github.com/dray-cyber/googlecontroller
+Author: dray-cyber
+Author-email: testerforpyt123@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # googlecontroller
 GITHUB EXCLUSIVE KNOWLEDGE FOR SERVE_MEDIA HERE
 Library for Python 3.9+ to push text message or audio file with the Google Home.Originally made by - Thomas Deblock (@tdeblock) I have expanded most of the code quite a bit little of the original remains, but the idea came from Mr.Deblock.This is a sorta v2 for the googlehomepush module they made.
@@ -59,3 +74,5 @@ Push a sound to Google home
 
 ## Maintainers
 - Dray-Cyber
+
+
