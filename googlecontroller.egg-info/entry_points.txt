@@ -1,3 +1,0 @@
-[console_scripts]
-googlecontroller = googlecontroller.__init__:main
-
