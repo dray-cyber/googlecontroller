@@ -16,7 +16,7 @@ def httpserver(path):
     if os.name == 'nt':
         os.system('cmd /k "python -m http.server 80 --bind 127.0.0.1"')
     else:
-        os.system('cmd /k "python -m SimpleHTTPServer 80 --bind 127.0.0.1"')
+        os.system('python -m SimpleHTTPServer 80 --bind 127.0.0.1')
 class GoogleAssistant:
     def __init__(self, host = None):
         try:
